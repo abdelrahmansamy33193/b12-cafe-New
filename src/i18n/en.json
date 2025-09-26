@@ -1,0 +1,67 @@
+{
+  "brand": "B12 Cafe",
+  "slogan": "Be Special, B12",
+  "nav": {
+    "menu": "Menu",
+    "locations": "Locations",
+    "about": "About",
+    "careers": "Careers",
+    "contact": "Contact",
+    "order": "Order Now"
+  },
+  "home": {
+    "badge": "Welcome To B12",
+    "headline": "Specialty coffee, cozy vibes, and a space to focus.",
+    "sub": "A modern café experience",
+    "ctaOrder": "Order Now",
+    "ctaMenu": "View Menu",
+    "featured": "Featured",
+    "featuredSub": "Seasonal picks and best sellers.",
+    "getApp": "Get the App",
+    "getAppSub": "Order ahead, earn rewards, and find stores near you.",
+    "storeLocator": "Store Locator",
+    "storeLocatorSub": "Find a café near you.",
+    "newsletterTitle": "Join our newsletter",
+    "newsletterSub": "Get offers, new releases, and events."
+  },
+  "menu": {
+    "title": "Menu",
+    "sub": ""
+  },
+  "about": {
+    "title": "About Us",
+    "sub": ""
+  },
+  "locations": {
+    "title": "Locations",
+    "sub": ""
+  },
+  "contact": {
+    "title": "Contact",
+    "sub": "Have questions? Send us a note.",
+    "send": "Send"
+  },
+  "footer": {
+    "tagline": "Premium cafe experiences. El-Galaa, Tanta, Gharbia Governorate, Egypt",
+    "company": "Company",
+    "explore": "Explore",
+    "follow": "Follow",
+    "links": {
+      "about": "About",
+      "contact": "Contact",
+      "menu": "Menu",
+      "locations": "Store Locator"
+    },
+    "social": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "whatsapp": "WhatsApp"
+    },
+    "legal": "All rights reserved."
+  },
+  "common": {
+    "notFound": "Page not found.",
+    "lang": "العربية",
+    "theme": "Theme"
+  }
+}
