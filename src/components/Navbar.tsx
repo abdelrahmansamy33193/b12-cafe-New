@@ -1,13 +1,16 @@
+import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { FiMoon, FiSun, FiMenu, FiX } from 'react-icons/fi'
 import useTheme from '../hooks/useTheme'
-import React from 'react'
 
 export default function Navbar(){
   const { t, i18n } = useTranslation()
   const { theme, toggle } = useTheme()
   const [open, setOpen] = React.useState(false)
+
+  // نبدأ بـ SVG ومع أول خطأ نتحول لنسخة PNG
+  const [logoSrc, setLogoSrc] = React.useState('/images/logo.svg?v=6')
 
   const toggleLang = () => {
     const next = i18n.language === 'ar' ? 'en' : 'ar'
@@ -26,27 +29,22 @@ export default function Navbar(){
     <nav className="nav">
       <div className="bar container">
         <div className="left">
-          <Link to="/" className="logo" aria-label="B12 Cafe — Home">
-  <picture>
-    {/* SVG (مع كسر كاش) */}
-    <source srcSet="/images/logo.svg?v=3" type="image/svg+xml" />
-    {/* Fallback PNG لو SVG ما اشتغلش على الموبايل */}
-    <img
-      src="/images/b12-logo.png?v=3"
-      alt="B12 Cafe"
-      height={36}
-      width={36}
-      loading="eager"           // مهم: ممنوع lazy للّوجو
-      decoding="async"
-      style={{ display: 'block' }}
-    />
-  </picture>
-  <div>
-    <div className="brand">{t('brand')}</div>
-    <div className="slogan">{t('slogan')}</div>
-  </div>
-</Link>
-
+          <Link to="/" className="logo" aria-label="B12 Cafe — Home" onClick={closeMenu}>
+            <img
+              src={logoSrc}
+              alt="B12 Cafe"
+              height={36}
+              width={36}
+              loading="eager"           // مهم: ممنوع lazy للّوجو
+              decoding="async"
+              style={{ display: 'block' }}
+              onError={() => setLogoSrc('/images/b12-logo.png?v=6')} // Fallback تلقائي
+            />
+            <div>
+              <div className="brand">{t('brand')}</div>
+              <div className="slogan">{t('slogan')}</div>
+            </div>
+          </Link>
         </div>
 
         {/* روابط الديسكتوب + لوحة الموبايل */}
@@ -55,7 +53,12 @@ export default function Navbar(){
           <NavLink to="/about" onClick={closeMenu}>{t('nav.about')}</NavLink>
           <NavLink to="/contact" onClick={closeMenu}>{t('nav.contact')}</NavLink>
 
-          <button className="btn ghost icon-btn" onClick={toggle} aria-label={t('common.theme')} title={t('common.theme')}>
+          <button
+            className="btn ghost icon-btn"
+            onClick={toggle}
+            aria-label={t('common.theme')}
+            title={t('common.theme')}
+          >
             {theme === 'dark' ? <FiSun /> : <FiMoon />}
           </button>
 
