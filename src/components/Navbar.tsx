@@ -26,13 +26,27 @@ export default function Navbar(){
     <nav className="nav">
       <div className="bar container">
         <div className="left">
-          <Link to="/" className="logo" onClick={closeMenu}>
-            <img src="/images/logo.svg" alt="Logo" loading="lazy" />
-            <div>
-              <div className="brand">{t('brand')}</div>
-              <div className="slogan">{t('slogan')}</div>
-            </div>
-          </Link>
+          <Link to="/" className="logo" aria-label="B12 Cafe — Home">
+  <picture>
+    {/* SVG (مع كسر كاش) */}
+    <source srcSet="/images/logo.svg?v=3" type="image/svg+xml" />
+    {/* Fallback PNG لو SVG ما اشتغلش على الموبايل */}
+    <img
+      src="/images/b12-logo.png?v=3"
+      alt="B12 Cafe"
+      height={36}
+      width={36}
+      loading="eager"           // مهم: ممنوع lazy للّوجو
+      decoding="async"
+      style={{ display: 'block' }}
+    />
+  </picture>
+  <div>
+    <div className="brand">{t('brand')}</div>
+    <div className="slogan">{t('slogan')}</div>
+  </div>
+</Link>
+
         </div>
 
         {/* روابط الديسكتوب + لوحة الموبايل */}
