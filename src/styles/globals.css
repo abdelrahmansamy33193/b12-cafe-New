@@ -200,15 +200,27 @@ html[dir="rtl"] .nav .links{ flex-direction: row-reverse } /* ديسكتوب */
 }
 
 /* ========== Social icons ========== */
-.social-icons{ display:flex; gap:12px; align-items:center }
-.social-icons .icon{
-  display:inline-flex; width:36px; height:36px; border-radius:999px;
-  align-items:center; justify-content:center;
-  background:rgba(255,255,255,.10); color:#fff;
-  border:1px solid rgba(255,255,255,.20);
-  transition:transform .2s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
-  opacity:.95;
+/* social icons في الفوتر */
+.social-icons{
+  display:flex; gap:12px; align-items:center;
 }
+.social-icons .icon{
+  display:inline-flex;
+  width:36px; height:36px;
+  border-radius:999px;
+  align-items:center; justify-content:center;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.20);
+  color:#fff;              /* مهم: لون الأيقونة أبيض */
+  transition:transform .2s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
+}
+.social-icons .icon:hover{
+  background:rgba(255,255,255,.18);
+  border-color: rgba(255,255,255,.35);
+  transform: translateY(-1px);
+}
+.social-icons svg{ width:18px; height:18px; }
+
 .social-icons .icon:hover{ background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.35); transform:translateY(-1px); opacity:1 }
 .social-icons svg{ width:18px; height:18px }
 
@@ -303,3 +315,64 @@ html[dir="rtl"] .nav .links{ flex-direction: row-reverse } /* ديسكتوب */
 /* ========== Reveal on scroll ========== */
 .reveal{ opacity:0; transform: translateY(14px); transition: opacity .5s var(--ease), transform .6s var(--ease) }
 .reveal.reveal-in{ opacity:1; transform:none }
+.about-hero {
+  position: relative;
+  min-height: 80vh;           /* خليه 100vh لو عايز يغطي الشاشة كاملة */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+.about-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* يغطي بدون تمدد غريب */
+  z-index: -2;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.55)
+  );
+}
+
+.about-content {
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+  max-width: 900px;
+}
+
+.about-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: .75rem;
+}
+
+.about-sub {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  opacity: .95;
+}
+
+/* احترام تفضيل تقليل الحركة + فallback للصورة */
+@media (prefers-reduced-motion: reduce) {
+  .about-bg-video { display: none; }
+  .about-hero {
+    background: center / cover no-repeat url('/assets/about-bg.jpg');
+  }
+}
+
+/* تحسين بسيط للموبايل */
+@media (max-width: 480px) {
+  .about-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.65));
+  }
+}

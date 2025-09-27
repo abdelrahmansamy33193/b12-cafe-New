@@ -27,32 +27,13 @@ export default function Home(){
       </section>
 
       {/* Get the App */}
-      <section className="section">
-        <div className="container card app-section">
-          <div>
-            <h3 className="section-title">{t('home.getApp')}</h3>
-            <p className="section-sub">{t('home.getAppSub')}</p>
-            <div style={{display:'flex', gap:10, flexWrap:'wrap'}}>
-              <a className="btn block-sm" href="#">App Store</a>
-              <a className="btn ghost block-sm" href="#">Google Play</a>
-            </div>
-          </div>
 
-          <img
-            src="/images/app.png"
-            className="app-illustration"
-            alt="B12 Cafe app"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </section>
 
       <Newsletter />
 
       <section className="section">
         <div className="container card" style={{display:'grid', gridTemplateColumns:'.9fr 1.1fr', alignItems:'center', gap:24}}>
-          <img src="/images/store.jpg" style={{width:'50%', borderRadius:16}} alt="store" loading="lazy"/>
+          <img src="/images/store.jpg" style={{width:'70%', borderRadius:16}} alt="store" loading="lazy"/>
           <div>
             <h3 className="section-title">{t('home.storeLocator')}</h3>
             <p className="section-sub">{t('home.storeLocatorSub')}</p>
