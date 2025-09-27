@@ -1,26 +1,29 @@
-import { useEffect, useState } from 'react'
+import * as React from 'react'
 
-export type Theme = 'light' | 'dark'
+type Theme = 'light' | 'dark'
+const STORAGE_KEY = 'theme'
+
+function getInitialTheme(): Theme {
+  if (typeof window === 'undefined') return 'light'
+  const saved = localStorage.getItem(STORAGE_KEY)
+  if (saved === 'light' || saved === 'dark') return saved
+  // الافتراضي دايمًا Light (لا نعتمد على system)
+  return 'light'
+}
 
 export default function useTheme() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem('theme') as Theme | null
-    if (saved === 'light' || saved === 'dark') return saved
-    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  })
+  const [theme, setTheme] = React.useState<Theme>(getInitialTheme)
 
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme
-    localStorage.setItem('theme', theme)
+  // طبّق السمة على <html data-theme="">
+  React.useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem(STORAGE_KEY, theme)
   }, [theme])
 
-  useEffect(() => {
-    const mql = window.matchMedia('(prefers-color-scheme: dark)')
-    const handler = (e: MediaQueryListEvent) => setTheme(e.matches ? 'dark' : 'light')
-    mql.addEventListener('change', handler)
-    return () => mql.removeEventListener('change', handler)
-  }, [])
+  const toggle = React.useCallback(
+    () => setTheme(t => (t === 'dark' ? 'light' : 'dark')),
+    []
+  )
 
-  const toggle = () => setTheme(t => (t === 'dark' ? 'light' : 'dark'))
-  return { theme, toggle }
+  return { theme, setTheme, toggle }
 }

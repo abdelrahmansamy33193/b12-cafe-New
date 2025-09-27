@@ -2,32 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Coffee house — placeholder clone built in React." />
-    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Prevent theme flash: default to LIGHT, then apply saved theme -->
+    <script>
+      !function(){
+        try{
+          var saved = localStorage.getItem('theme');
+          var theme = (saved === 'dark' || saved === 'light') ? saved : 'light';
+          document.documentElement.setAttribute('data-theme', theme);
+        }catch(e){}
+      }();
+    </script>
+
     <title>B12 Cafe</title>
-    <meta name="description" content="B12 Cafe — premium coffee experiences.">
-    <meta name="theme-color" content="#0e3b2e">
-    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="B12 Cafe — premium coffee experiences." />
+    <link rel="canonical" href="https://b12-cafe-new.vercel.app/">
+    
+    <!-- Browser/UI colors -->
+    <meta name="theme-color" content="#F6F1E8" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F6F1E8">
+    <!-- Open Graph -->
     <meta property="og:title" content="B12 Cafe" />
     <meta property="og:description" content="Specialty coffee, cozy vibes, and a space to focus." />
-    <meta property="og:image" content="/images/og-cover.jpg?v=1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://b12-cafe-new.vercel.app/" />
+    <meta property="og:image" content="/images/og-cover.jpg?v=2" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="B12 Cafe">
-    <meta property="og:description" content="Premium coffee experiences.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="/og-image.png">
-    <meta property="og:url" content="https://your-domain.example">
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="B12 Cafe">
-    <meta name="twitter:description" content="Premium coffee experiences.">
-    <meta name="twitter:image" content="/og-image.png">
-    <!-- GA4 (replace MEASUREMENT_ID) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="B12 Cafe" />
+    <meta name="twitter:description" content="Specialty coffee, cozy vibes, and a space to focus." />
+    <meta name="twitter:image" content="/images/og-cover.jpg?v=2" />
+
+    <!-- GA4 (replace with your MEASUREMENT ID) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEASUREMENT_ID"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -35,15 +46,20 @@
       gtag('js', new Date());
       gtag('config', 'G-MEASUREMENT_ID');
     </script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
+    <!-- Icons & Manifest -->
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
