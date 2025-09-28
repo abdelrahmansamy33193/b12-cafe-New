@@ -7,7 +7,8 @@
     "about": "About",
     "careers": "Careers",
     "contact": "Contact",
-    "order": "Order Now"
+    "order": "Order Now",
+    "events": "Events"
   },
   "home": {
     "badge": "Welcome To B12",
@@ -17,7 +18,6 @@
     "ctaMenu": "View Menu",
     "featured": "Featured",
     "featuredSub": "Seasonal picks and best sellers.",
-   
     "getAppSub": "Order ahead, earn rewards, and find stores near you.",
     "storeLocator": "Store Locator",
     "storeLocatorSub": "Find a café near you.",
@@ -35,6 +35,10 @@
   "locations": {
     "title": "Locations",
     "sub": ""
+  },
+  "events": {
+    "title": "Events",
+    "sub": "Highlights from our special moments and community gatherings."
   },
   "contact": {
     "title": "Contact",

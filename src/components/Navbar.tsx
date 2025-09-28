@@ -51,6 +51,7 @@ export default function Navbar(){
         <div id="nav-links" className={`links ${open ? 'open' : ''}`}>
           <NavLink to="/menu" onClick={closeMenu}>{t('nav.menu')}</NavLink>
           <NavLink to="/about" onClick={closeMenu}>{t('nav.about')}</NavLink>
+          <NavLink to="/events">{t('nav.events','Events')}</NavLink>
           <NavLink to="/contact" onClick={closeMenu}>{t('nav.contact')}</NavLink>
 
           <button

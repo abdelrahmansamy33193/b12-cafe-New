@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-
+import Events from './pages/Events'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import FloatingWhatsApp from './components/FloatingWhatsApp'
@@ -37,7 +37,9 @@ export default function App(){
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/about" element={<About />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/contact" element={<Contact />} />
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
