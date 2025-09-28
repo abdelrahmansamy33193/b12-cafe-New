@@ -391,3 +391,22 @@ html[dir="rtl"] .nav .links{ flex-direction:row-reverse }
   background:rgba(0,0,0,.45); color:#fff; display:grid; place-items:center; backdrop-filter:blur(4px);
 }
 .ig-play svg{ width:18px; height:18px }
+/* Overlay خلف قائمة الموبايل */
+.nav-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 95;           /* أقل من روابط المينيو (99) وأعلى من المحتوى */
+  display: none;         /* ديفولت مخفي */
+}
+
+/* الموبايل فقط: فعّل الـoverlay */
+@media (max-width: 900px){
+  .nav .links{ z-index: 99; } /* الروابط أعلى من الـoverlay */
+  .nav-overlay{ display: block; }
+}

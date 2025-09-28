@@ -8,7 +8,7 @@ export default function Navbar(){
   const { t, i18n } = useTranslation()
   const { theme, toggle } = useTheme()
   const [open, setOpen] = React.useState(false)
-  const { pathname } = useLocation()              // نتابع تغيّر المسار
+  const location = useLocation()
 
   // نبدأ بـ SVG ومع أول خطأ نتحول لنسخة PNG
   const [logoSrc, setLogoSrc] = React.useState('/images/logo.svg?v=6')
@@ -17,32 +17,25 @@ export default function Navbar(){
     const next = i18n.language === 'ar' ? 'en' : 'ar'
     i18n.changeLanguage(next)
     localStorage.setItem('lang', next)
-    setOpen(false) // أقفل المنيو على الموبايل بعد تغيير اللغة
   }
+  const closeMenu = () => setOpen(false)
 
-  const toggleMenu = () => setOpen(v => !v)
-  const closeMenu  = () => setOpen(false)
-
-  // اقفل المنيو تلقائيًا عند التنقّل لأي صفحة
-  React.useEffect(() => { setOpen(false) }, [pathname])
-
-  // امنع السكرول لما المنيو مفتوحة (أفضل على html بدل body)
+  // اقفل سكرول الصفحة لما المينيو مفتوحة
   React.useEffect(() => {
-    const el = document.documentElement
-    const prev = el.style.overflow
-    el.style.overflow = open ? 'hidden' : prev || ''
-    return () => { el.style.overflow = prev || '' }
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
   }, [open])
 
-  // اقفال Escape
-  const onLinksKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === 'Escape') closeMenu()
-  }
+  // إغلاق تلقائي عند تغيّر الراوت (أي تنقّل)
+  React.useEffect(() => { setOpen(false) }, [location])
 
-  // الضغط على الخلفية البيضاء داخل اللوحة (مساحة فاضية) يقفلها
-  const onLinksClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) closeMenu()
-  }
+  // اغلاق بـ Escape
+  React.useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
 
   return (
     <nav className="nav">
@@ -67,13 +60,7 @@ export default function Navbar(){
         </div>
 
         {/* روابط الديسكتوب + لوحة الموبايل */}
-        <div
-          id="nav-links"
-          className={`links ${open ? 'open' : ''}`}
-          onKeyDown={onLinksKeyDown}
-          onClick={onLinksClick}
-          aria-hidden={!open}
-        >
+        <div id="nav-links" className={`links ${open ? 'open' : ''}`}>
           <NavLink to="/menu" onClick={closeMenu}>{t('nav.menu')}</NavLink>
           <NavLink to="/about" onClick={closeMenu}>{t('nav.about')}</NavLink>
           <NavLink to="/events" onClick={closeMenu}>{t('nav.events','Events')}</NavLink>
@@ -81,7 +68,7 @@ export default function Navbar(){
 
           <button
             className="btn ghost icon-btn"
-            onClick={() => { toggle(); closeMenu(); }}
+            onClick={toggle}
             aria-label={t('common.theme')}
             title={t('common.theme')}
           >
@@ -99,11 +86,21 @@ export default function Navbar(){
           aria-label="Toggle menu"
           aria-controls="nav-links"
           aria-expanded={open}
-          onClick={toggleMenu}
+          onClick={() => setOpen(v => !v)}
         >
           {open ? <FiX /> : <FiMenu />}
         </button>
       </div>
+
+      {/* Overlay للموبايل: ضغطه واحدة تقفل المنيو */}
+      {open && (
+        <button
+          className="nav-overlay"
+          aria-label="Close menu"
+          onClick={closeMenu}
+          aria-hidden
+        />
+      )}
     </nav>
   )
 }
