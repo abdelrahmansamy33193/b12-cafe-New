@@ -55,7 +55,7 @@ export default function Footer(){
             <h4>{t('footer.explore')}</h4>
             <ul style={{listStyle:'none', padding:0, margin:0, lineHeight:'28px'}}>
               <li><a href="/menu">{t('footer.links.menu')}</a></li>
-              <li><a href="/locations">{t('footer.links.locations')}</a></li>
+              <li><a href="/contact">{t('footer.links.locations')}</a></li>
             </ul>
           </div>
 

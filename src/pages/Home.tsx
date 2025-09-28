@@ -37,7 +37,7 @@ export default function Home(){
           <div>
             <h3 className="section-title">{t('home.storeLocator')}</h3>
             <p className="section-sub">{t('home.storeLocatorSub')}</p>
-            <a className="btn" href="/locations">Find Stores</a>
+            <a className="btn" href="/contact">Find Stores</a>
           </div>
         </div>
       </section>
