@@ -22,7 +22,7 @@ export default function Footer(){
             <div style={{display:'flex', alignItems:'center', gap:12}}>
               <img
                 src={FALLBACKS[idx]}
-                alt="B12 Cafe"
+                alt={t('brand')}
                 height={40}
                 width={40}
                 loading="eager"
@@ -37,38 +37,38 @@ export default function Footer(){
             </div>
 
             <p style={{opacity:.9, marginTop:12, maxWidth:520}}>
-              Premium cafe experiences. El-Galaa ,Tanta, Gharbia Governorate, Egypt
+              {t('footer.tagline')}
             </p>
           </div>
 
           {/* Company */}
           <div>
-            <h4>Company</h4>
+            <h4>{t('footer.company')}</h4>
             <ul style={{listStyle:'none', padding:0, margin:0, lineHeight:'28px'}}>
-              <li><a href="/about">About</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><a href="/about">{t('footer.links.about')}</a></li>
+              <li><a href="/contact">{t('footer.links.contact')}</a></li>
             </ul>
           </div>
 
           {/* Explore */}
           <div>
-            <h4>Explore</h4>
+            <h4>{t('footer.explore')}</h4>
             <ul style={{listStyle:'none', padding:0, margin:0, lineHeight:'28px'}}>
-              <li><a href="/menu">Menu</a></li>
-              <li><a href="/locations">Store Locator</a></li>
+              <li><a href="/menu">{t('footer.links.menu')}</a></li>
+              <li><a href="/locations">{t('footer.links.locations')}</a></li>
             </ul>
           </div>
 
           {/* Social */}
           <div>
-            <h4>Follow</h4>
+            <h4>{t('footer.follow')}</h4>
             <nav className="social-icons" aria-label="Social media">
               {/* Instagram (stroke outline) */}
               <a
                 href="https://www.instagram.com/b12.eg"
                 target="_blank"
                 rel="noopener"
-                aria-label="Instagram"
+                aria-label={t('footer.social.instagram')}
                 className="icon"
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -86,7 +86,7 @@ export default function Footer(){
                 href="https://www.facebook.com/profile.php?id=61571054160777&sk"
                 target="_blank"
                 rel="noopener"
-                aria-label="Facebook"
+                aria-label={t('footer.social.facebook')}
                 className="icon"
               >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -99,7 +99,7 @@ export default function Footer(){
         </div>
 
         <div style={{marginTop:24, opacity:.7, fontSize:14}}>
-          © {new Date().getFullYear()} B12 Cafe. All rights reserved.
+          © {new Date().getFullYear()} {t('brand')}. {t('footer.legal')}
         </div>
       </div>
     </footer>

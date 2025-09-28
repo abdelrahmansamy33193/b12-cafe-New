@@ -2,6 +2,7 @@
   "brand": "B12 Cafe",
   "slogan": "Be Special, B12",
   "nav": {
+    "home": "Home",
     "menu": "Menu",
     "locations": "Locations",
     "about": "About",
@@ -30,7 +31,9 @@
   },
   "about": {
     "title": "About Us",
-    "sub": ""
+    "sub": "",
+    "blurb_p1": "Welcome to B12 Café — where every cup tells a story. We believe in creating a unique experience for our customers by offering special blends, cozy vibes, and unforgettable moments.",
+    "blurb_p2": "Our mission is simple: Be Special. At B12 Café, it’s not just about coffee; it’s about community, passion, and making every visit memorable."
   },
   "locations": {
     "title": "Locations",
@@ -46,7 +49,7 @@
     "send": "Send"
   },
   "footer": {
-    "tagline": "Premium cafe experiences. El-Galaa, Tanta, Gharbia Governorate, Egypt",
+    "tagline": "Premium cafe experiences.chill out El-Galaa, Tanta, Gharbia Governorate, Egypt",
     "company": "Company",
     "explore": "Explore",
     "follow": "Follow",
