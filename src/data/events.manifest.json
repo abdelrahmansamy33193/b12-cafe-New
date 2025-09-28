@@ -1,0 +1,414 @@
+{
+  "albums": [
+    {
+      "title": "album1",
+      "slug": "album1",
+      "date": null,
+      "cover": "/assets/events/album1/1.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album1/1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album1/2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album1/3.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album1/4.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album1/5.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album1/6.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album1/7.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album1/8.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album1/9.jpg"
+        }
+      ]
+    },
+    {
+      "title": "album2",
+      "slug": "album2",
+      "date": null,
+      "cover": "/assets/events/album2/1.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album2/1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album2/2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album2/3.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album2/4.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album2/5.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album2/6.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album2/7.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album2/8.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album2/9.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album2/10.jpg"
+        }
+      ]
+    },
+    {
+      "title": "album3",
+      "slug": "album3",
+      "date": null,
+      "cover": "/assets/events/album3/3.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album3/3.jpg"
+        },
+        {
+          "type": "video",
+          "src": "/assets/events/album3/3.mp4",
+          "poster": "/assets/events/album3/3.jpg"
+        }
+      ]
+    },
+    {
+      "title": "album4",
+      "slug": "album4",
+      "date": null,
+      "cover": "/assets/events/album4/4.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album4/4.jpg"
+        },
+        {
+          "type": "video",
+          "src": "/assets/events/album4/4.mp4",
+          "poster": "/assets/events/album4/4.jpg"
+        }
+      ]
+    },
+    {
+      "title": "album5",
+      "slug": "album5",
+      "date": null,
+      "cover": "/assets/events/album5/1.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album5/1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album5/2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album5/3.jpg"
+        }
+      ]
+    },
+    {
+      "title": "album6",
+      "slug": "album6",
+      "date": null,
+      "cover": "/assets/events/album6/6.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album6/6.jpg"
+        },
+        {
+          "type": "video",
+          "src": "/assets/events/album6/6.mp4",
+          "poster": "/assets/events/album6/6.jpg"
+        }
+      ]
+    },
+    {
+      "title": "album7",
+      "slug": "album7",
+      "date": null,
+      "cover": "/assets/events/album7/7.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album7/7.jpg"
+        },
+        {
+          "type": "video",
+          "src": "/assets/events/album7/7.mp4",
+          "poster": "/assets/events/album7/7.jpg"
+        }
+      ]
+    },
+    {
+      "title": "album8",
+      "slug": "album8",
+      "date": null,
+      "cover": "/assets/events/album8/1.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album8/1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album8/2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album8/3.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album8/4.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album8/5.jpg"
+        }
+      ]
+    },
+    {
+      "title": "album9",
+      "slug": "album9",
+      "date": null,
+      "cover": "/assets/events/album9/1.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album9/1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album9/2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album9/3.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album9/4.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album9/5.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album9/6.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album9/7.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album9/8.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album9/9.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album9/10.jpg"
+        }
+      ]
+    },
+    {
+      "title": "album10",
+      "slug": "album10",
+      "date": null,
+      "cover": "/assets/events/album10/10.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album10/10.jpg"
+        },
+        {
+          "type": "video",
+          "src": "/assets/events/album10/10.mp4",
+          "poster": "/assets/events/album10/10.jpg"
+        }
+      ]
+    },
+    {
+      "title": "album11",
+      "slug": "album11",
+      "date": null,
+      "cover": "/assets/events/album11/1.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album11/1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album11/2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album11/3.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album11/4.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album11/5.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album11/6.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album11/7.jpg"
+        }
+      ]
+    },
+    {
+      "title": "album12",
+      "slug": "album12",
+      "date": null,
+      "cover": "/assets/events/album12/1.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album12/1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album12/2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album12/3.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album12/4.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album12/5.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album12/6.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album12/7.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album12/8.jpg"
+        }
+      ]
+    },
+    {
+      "title": "album13",
+      "slug": "album13",
+      "date": null,
+      "cover": "/assets/events/album13/13.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album13/13.jpg"
+        },
+        {
+          "type": "video",
+          "src": "/assets/events/album13/13.mp4",
+          "poster": "/assets/events/album13/13.jpg"
+        }
+      ]
+    },
+    {
+      "title": "album14",
+      "slug": "album14",
+      "date": null,
+      "cover": "/assets/events/album14/1.jpg",
+      "media": [
+        {
+          "type": "image",
+          "src": "/assets/events/album14/1.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album14/2.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album14/3.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album14/4.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album14/5.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album14/6.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album14/7.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album14/8.jpg"
+        },
+        {
+          "type": "image",
+          "src": "/assets/events/album14/9.jpg"
+        }
+      ]
+    }
+  ]
+}
