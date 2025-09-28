@@ -1,4 +1,6 @@
-/* ========== Tokens & Themes ========== */
+/* =========================
+   Tokens & Themes (Brand)
+   ========================= */
 :root{
   --container: 1200px;
 
@@ -36,12 +38,11 @@ html[data-theme="dark"]{
   --muted: #cbd5e1;
   --border: rgba(255,255,255,.14);
   --hover: rgba(255,255,255,.12);
-
   --hero-fg: #ffffff;
   --hero-overlay: rgba(0,0,0,.35);
 }
 
-/* ========== Base ========== */
+/* ========== Base & Reset ========== */
 *{ box-sizing:border-box }
 html,body,#root{ height:100% }
 html,body{ scroll-behavior: smooth }
@@ -50,117 +51,94 @@ body{
   font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   color: var(--text);
   background: var(--brand-cream);
-  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+img,picture,video,canvas,svg{ display:block; max-width:100% }
 a{ color:inherit; text-decoration:none }
+
 .container{ max-width:var(--container); margin:auto; padding:0 20px }
 .section{ padding:60px 0 }
 .grid{ display:grid; gap:20px }
 
 /* Typography */
-.section-title{ font-size:32px; margin:0 0 10px; color: var(--text-strong); letter-spacing:.2px }
+.section-title{ font-size:32px; margin:0 0 10px; color:var(--text-strong); letter-spacing:.2px }
 .section-sub{ color:var(--muted); margin:0 0 24px }
 
-/* Buttons */
+/* ========== Buttons ========== */
 .btn{
   display:inline-block; padding:12px 18px; border-radius:999px;
   border:1px solid var(--brand-dark); color:#fff; background:var(--brand-dark);
   cursor:pointer; transition: transform .12s var(--ease), box-shadow .2s var(--ease), opacity .2s;
 }
-.btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow-1) }
-.btn:active{ transform: translateY(0) }
-.btn.ghost{
-  background: transparent; color: var(--text); border-color: var(--border);
-}
-.btn.ghost:hover{ background: rgba(14,59,46,.06) }
+.btn:hover{ transform:translateY(-1px); box-shadow:var(--shadow-1) }
+.btn:active{ transform:translateY(0) }
+.btn.ghost{ background:transparent; color:var(--text); border-color:var(--border) }
+.btn.ghost:hover{ background:rgba(14,59,46,.06) }
+.btn.icon-btn{ width:40px; height:40px; padding:0; display:inline-grid; place-items:center }
 
-/* Cards */
+/* ========== Cards & Badges ========== */
 .card{
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding:20px;
-  box-shadow: var(--shadow-1);
+  background:var(--white); border:1px solid var(--border);
+  border-radius:var(--radius); padding:20px; box-shadow:var(--shadow-1);
   transition: transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s;
 }
-.card:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2); }
-
-/* Badge */
+.card:hover{ transform:translateY(-2px); box-shadow:var(--shadow-2) }
 .badge{ background:var(--brand-gold); color:#fff; padding:4px 10px; border-radius:999px; font-size:12px; letter-spacing:.4px }
 
 /* ========== Hero ========== */
 .hero{
-  position:relative; min-height:70vh; display:flex; align-items:center;
-  color: var(--hero-fg);
-  background:
-    linear-gradient(0deg, var(--hero-overlay), var(--hero-overlay)),
-    url('/images/hero.jpg') center/cover no-repeat;
+  position:relative; min-height:70vh; display:flex; align-items:center; color:var(--hero-fg);
+  background:linear-gradient(0deg,var(--hero-overlay),var(--hero-overlay)), url('/images/hero.jpg') center/cover no-repeat;
 }
 .hero .content{ padding:40px; max-width:700px }
 .hero .content h1.hero-title{ font-size:clamp(28px,7vw,54px); line-height:1.1; margin:10px 0 }
 .hero .actions{ display:flex; gap:12px; flex-wrap:wrap }
-/* تأكيد وضوح النص */
 .hero .content p{ opacity:1 !important }
 html[data-theme="dark"] .hero .content *{ text-shadow:0 2px 10px rgba(0,0,0,.55) }
 
-/* ========== Navbar (Desktop + Mobile) ========== */
+/* ========== Navbar ========== */
 .nav{
   position:sticky; top:0; z-index:100;
-  background: rgba(255,255,255,.58);
-  backdrop-filter: saturate(140%) blur(10px);
-  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  background:rgba(255,255,255,.58);
+  backdrop-filter:saturate(140%) blur(10px);
+  -webkit-backdrop-filter:saturate(140%) blur(10px);
   border-bottom:1px solid rgba(255,255,255,.30);
   transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
-html[data-theme="dark"] .nav{
-  background: rgba(15,23,20,.85);
-  border-bottom: 1px solid rgba(255,255,255,.12);
-}
+html[data-theme="dark"] .nav{ background:rgba(15,23,20,.85); border-bottom:1px solid rgba(255,255,255,.12) }
 .nav .bar{ display:flex; align-items:center; justify-content:space-between; height:64px }
 .nav .left{ display:flex; align-items:center; gap:18px }
 .logo{ display:flex; align-items:center; gap:10px }
 .logo img{ height:36px; width:auto }
-.logo .brand{ font-weight:800; color: var(--text-strong); letter-spacing:.5px }
-.slogan{ font-size:12px; color: var(--muted) }
+.logo .brand{ font-weight:800; color:var(--text-strong); letter-spacing:.5px }
+.slogan{ font-size:12px; color:var(--muted) }
 
-/* Desktop links */
-.nav .links{
-  display:flex; gap:18px; align-items:center;
+.nav .links{ display:flex; gap:18px; align-items:center }
+.nav .links a{
+  padding:8px 10px; border-radius:8px; color:var(--text);
+  position:relative; transition:color .2s, background-color .2s;
 }
-.nav .links a{ padding:8px 10px; border-radius:8px; color: var(--text) }
-.nav .links a.active, .nav .links a:hover{ background: var(--hover) }
-
-/* Accent underline animation */
-.nav .links a{ position:relative; transition:color .2s }
+.nav .links a.active, .nav .links a:hover{ background:var(--hover) }
 .nav .links a::after{
   content:""; position:absolute; left:10px; right:10px; bottom:-6px; height:2px;
-  background: linear-gradient(90deg,var(--brand-gold), var(--brand-dark));
-  transform: scaleX(0); transform-origin:center; transition: transform .25s var(--ease);
+  background:linear-gradient(90deg,var(--brand-gold),var(--brand-dark));
+  transform:scaleX(0); transform-origin:center; transition:transform .25s var(--ease);
 }
-.nav .links a:hover::after, .nav .links a.active::after{ transform: scaleX(1) }
+.nav .links a:hover::after, .nav .links a.active::after{ transform:scaleX(1) }
 
-/* Mobile hamburger button */
 .menu-btn{
   display:none; align-items:center; justify-content:center;
   width:40px; height:40px; border-radius:10px; border:1px solid var(--border);
-  background: transparent; color: var(--text);
+  background:transparent; color:var(--text);
 }
 .menu-btn svg{ width:20px; height:20px }
-
-/* Mobile panel */
 @media (max-width:900px){
   .menu-btn{ display:inline-flex }
   .nav .links{
-    position: fixed;
-    top:64px; left:0; right:0;
-    height: calc(100vh - 64px);
-    background: var(--white);
-    display: grid; align-content:start;
-    gap:12px; padding:16px; overflow:auto;
-    transform: translateY(-8px);
-    opacity:0; pointer-events:none; z-index:99;
-    border-bottom:1px solid var(--border);
-    backdrop-filter: blur(10px);
+    position:fixed; top:64px; left:0; right:0; height:calc(100vh - 64px);
+    background:var(--white); display:grid; align-content:start; gap:12px; padding:16px; overflow:auto;
+    transform:translateY(-8px); opacity:0; pointer-events:none; z-index:99; border-bottom:1px solid var(--border); backdrop-filter:blur(10px);
   }
   html[data-theme="dark"] .nav .links{ background:#0f1714 }
   .nav .links.open{ transform:none; opacity:1; pointer-events:auto }
@@ -173,91 +151,63 @@ html[data-theme="dark"] .nav{
 .footer a:hover{ opacity:1 }
 .footer::before{
   content:""; position:absolute; top:0; left:0; right:0; height:2px;
-  background: linear-gradient(90deg, rgba(197,167,100,.0), rgba(197,167,100,.8), rgba(197,167,100,.0));
+  background:linear-gradient(90deg, rgba(197,167,100,0), rgba(197,167,100,.8), rgba(197,167,100,0));
 }
 @media (max-width:900px){ .footer .cols{ grid-template-columns:1fr 1fr } }
 @media (max-width:600px){ .footer .cols{ grid-template-columns:1fr } }
 
-/* ========== Responsive grids ========== */
+/* ========== Responsive helpers ========== */
 .grid-3{ grid-template-columns:repeat(3,1fr) }
 .grid-2{ grid-template-columns:repeat(2,1fr) }
 .grid-1{ grid-template-columns:1fr }
 @media (max-width:1024px){ .grid-3{ grid-template-columns:repeat(2,1fr) } }
 @media (max-width:640px){
-  .grid-3, .grid-2{ grid-template-columns:1fr }
+  .grid-3,.grid-2{ grid-template-columns:1fr }
   .btn.block-sm{ display:block; width:100%; text-align:center }
   .hero{ min-height:60vh }
   .container{ padding:0 16px }
 }
 
 /* ========== RTL tweaks ========== */
-html[lang="ar"] body { font-family: Tajawal, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif }
-html[lang="en"] body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif }
-html[dir="rtl"] .nav .bar{ flex-direction: row-reverse }
-html[dir="rtl"] .nav .links{ flex-direction: row-reverse } /* ديسكتوب */
-@media (max-width:900px){
-  html[dir="rtl"] .nav .links{ flex-direction: column }   /* موبايل */
-}
+html[lang="ar"] body{ font-family:Tajawal,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif }
+html[lang="en"] body{ font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif }
+html[dir="rtl"] .nav .bar{ flex-direction:row-reverse }
+html[dir="rtl"] .nav .links{ flex-direction:row-reverse }
+@media (max-width:900px){ html[dir="rtl"] .nav .links{ flex-direction:column } }
 
 /* ========== Social icons ========== */
-/* social icons في الفوتر */
-.social-icons{
-  display:flex; gap:12px; align-items:center;
-}
+.social-icons{ display:flex; gap:12px; align-items:center }
 .social-icons .icon{
-  display:inline-flex;
-  width:36px; height:36px;
-  border-radius:999px;
-  align-items:center; justify-content:center;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.20);
-  color:#fff;              /* مهم: لون الأيقونة أبيض */
+  display:inline-flex; width:36px; height:36px; border-radius:999px; align-items:center; justify-content:center;
+  background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.20); color:#fff;
   transition:transform .2s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
 }
-.social-icons .icon:hover{
-  background:rgba(255,255,255,.18);
-  border-color: rgba(255,255,255,.35);
-  transform: translateY(-1px);
-}
-.social-icons svg{ width:18px; height:18px; }
-
-.social-icons .icon:hover{ background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.35); transform:translateY(-1px); opacity:1 }
+.social-icons .icon:hover{ background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.35); transform:translateY(-1px) }
 .social-icons svg{ width:18px; height:18px }
 
 /* ========== Floating WhatsApp ========== */
 .wa-float{
-  position: fixed; right:18px; bottom:18px;
-  width:56px; height:56px; border-radius:999px;
-  display:flex; align-items:center; justify-content:center;
-  background:#25D366; color:#fff; box-shadow:0 10px 30px rgba(0,0,0,.15);
-  z-index:50; transition: transform .2s ease, box-shadow .2s ease;
+  position:fixed; right:18px; bottom:18px; width:56px; height:56px; border-radius:999px;
+  display:flex; align-items:center; justify-content:center; background:#25D366; color:#fff;
+  box-shadow:0 10px 30px rgba(0,0,0,.15); z-index:50; transition:transform .2s ease, box-shadow .2s ease;
 }
-.wa-float:hover{ transform: translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,.2) }
+.wa-float:hover{ transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,.2) }
 .wa-float svg{ width:26px; height:26px }
 @media (max-width:640px){ .wa-float{ right:14px; bottom:14px; width:52px; height:52px } }
 
 /* ========== Contact ========== */
-.contact-grid{ display:grid; grid-template-columns: 1.1fr .9fr; gap:24px }
+.contact-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:24px }
 .contact-info ul{ list-style:none; padding:0; margin:12px 0 0 }
 .contact-info li{ display:flex; align-items:center; gap:6px; line-height:28px }
-.contact-form input, .contact-form textarea{
-  width:100%; padding:12px; border-radius:12px; border:1px solid var(--border); background: var(--white);
-  color: var(--text);
+.contact-form input,.contact-form textarea{
+  width:100%; padding:12px; border-radius:12px; border:1px solid var(--border); background:var(--white); color:var(--text);
 }
 .contact-form .row{ display:grid; gap:12px; grid-template-columns:1fr 1fr }
 .contact-form .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:8px }
-.contact-form input:focus, .contact-form textarea:focus{
-  border-color:#c3d5cf; box-shadow:0 0 0 4px rgba(14,59,46,.08); outline: none;
+.contact-form input:focus,.contact-form textarea:focus{
+  border-color:#c3d5cf; box-shadow:0 0 0 4px rgba(14,59,46,.08); outline:none;
 }
-@media (max-width:900px){
-  .contact-grid{ grid-template-columns:1fr }
-  .contact-form .row{ grid-template-columns:1fr }
-}
-
-/* ========== Map embed ========== */
-.map-embed{ position:relative; width:100%; aspect-ratio:16/9; border-radius:16px; overflow:hidden }
-.map-embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0 }
-@media (max-width:640px){ .map-embed{ aspect-ratio:4/3 } }
+@media (max-width:900px){ .contact-grid{ grid-template-columns:1fr } .contact-form .row{ grid-template-columns:1fr } }
 
 /* ========== Menu gallery ========== */
 .menu-pages{ display:grid; gap:14px; grid-template-columns:repeat(3,1fr) }
@@ -270,109 +220,174 @@ html[dir="rtl"] .nav .links{ flex-direction: row-reverse } /* ديسكتوب */
   border-radius:14px; overflow:hidden; box-shadow:0 8px 22px rgba(0,0,0,.05);
   transition: transform .25s var(--ease), box-shadow .25s var(--ease);
 }
-.menu-thumb:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2) }
+.menu-thumb:hover{ transform:translateY(-2px); box-shadow:var(--shadow-2) }
 .menu-thumb img{ width:100%; height:auto; display:block; aspect-ratio:2/3; object-fit:cover }
 
-/* Lightbox */
+/* ========== About hero (smaller video bg) ========== */
+.about-hero{
+  position:relative;
+  min-height:85vh;
+  display:grid; place-items:center;
+  overflow:hidden; color:#fff;
+}
+@media (max-width:1024px){ .about-hero{ min-height:52vh } }
+@media (max-width:640px){ .about-hero{ min-height:48vh } }
+
+.about-bg-video{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center 30%;
+  z-index:-2;
+}
+.about-overlay{
+  position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.55));
+}
+.about-content{ position:relative; text-align:center; padding:2rem; max-width:900px }
+.about-title{ font-size:clamp(2rem,4vw,3rem); line-height:1.15; margin-bottom:.75rem }
+.about-sub{ font-size:clamp(1rem,1.6vw,1.25rem); opacity:.95 }
+
+@media (prefers-reduced-motion: reduce){
+  .about-bg-video{ display:none }
+  .about-hero{ background:center / cover no-repeat url('/assets/about-bg.jpg') }
+}
+
+/* =========================
+   Instagram-like Events Grid
+   ========================= */
+.events-grid{
+  display:grid; gap:2px; grid-template-columns:repeat(3,1fr);
+}
+@media (min-width:900px){ .events-grid{ grid-template-columns:repeat(4,1fr) } }
+@media (min-width:1280px){ .events-grid{ grid-template-columns:repeat(5,1fr) } }
+
+.event-card.ig{
+  grid-column:auto; background:transparent; border:0; border-radius:0; box-shadow:none;
+  position:relative; outline:none;
+}
+.event-cover.ig-tile{
+  position:relative; aspect-ratio:1/1; overflow:hidden; cursor:zoom-in;
+  contain:paint; -webkit-tap-highlight-color:transparent;
+}
+.event-cover.ig-tile img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  transition:transform .18s ease; will-change:transform; user-select:none; -webkit-user-drag:none;
+}
+.event-card.ig:hover .ig-tile img{ transform:scale(1.02) }
+
+.ig-overlay{
+  position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0) 55%);
+  opacity:0; transition:opacity .18s ease;
+}
+.event-card.ig:hover .ig-overlay,
+.event-card.ig:active .ig-overlay,
+.event-card.ig:focus-within .ig-overlay{ opacity:1 }
+
+.ig-caption{ position:absolute; left:8px; right:8px; bottom:8px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,.6) }
+.ig-caption h3{ margin:0; font-weight:700; font-size:clamp(.9rem,1.6vw,1rem) }
+.ig-caption .ig-date{ display:inline-block; margin-top:2px; opacity:.85; font-size:.8rem }
+
+.ig-multi{
+  position:absolute; top:8px; right:8px; width:28px; height:28px; border-radius:8px;
+  display:grid; place-items:center; background:rgba(0,0,0,.45); color:#fff; backdrop-filter:blur(4px);
+}
+@media (max-width:420px){ .ig-multi{ width:24px; height:24px; border-radius:7px } }
+
+/* ===== Lightbox (centered + swipe/zoom/pan) ===== */
 .lightbox{
-  position:fixed; inset:0; z-index:60; background:rgba(0,0,0,.85);
-  display:flex; align-items:center; justify-content:center; padding:20px;
-}
-.lightbox img{
-  width:auto; max-width:min(95vw,1100px); max-height:90vh;
-  border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,.4);
-}
-.lightbox-btn{
-  position:fixed; top:50%; transform:translateY(-50%);
-  width:44px; height:44px; border-radius:999px; border:1px solid rgba(255,255,255,.35);
-  background:rgba(255,255,255,.1); color:#fff; font-size:28px; line-height:1;
-  display:flex; align-items:center; justify-content:center; cursor:pointer; transition:.2s;
-}
-.lightbox-btn:hover{ background:rgba(255,255,255,.2) }
-.lightbox-btn.prev{ left:16px } .lightbox-btn.next{ right:16px }
-.lightbox-close{
-  position:fixed; top:16px; right:16px; width:40px; height:40px; border-radius:999px;
-  border:1px solid rgba(255,255,255,.35); background:rgba(255,255,255,.1); color:#fff; font-size:24px; cursor:pointer;
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,.85);
+  display: grid;
+  place-items: start center;   /* كان center → خليناه فوق */
+  width: 100svw; height: 100svh;
+  padding: 8px;
+  padding-top: 6vh;            /* مسافة من فوق */
 }
 
-/* ========== App section image ========== */
-.app-section{
-  display:grid; grid-template-columns: 1.25fr .75fr; align-items:center; gap:24px;
-}
-.app-illustration{
-  width: clamp(260px, 34vw, 360px);
-  border-radius:16px; justify-self:end; height:auto;
-}
-@media (max-width:1024px){
-  .app-section{ grid-template-columns: 1.1fr .9fr }
-  .app-illustration{ width: clamp(240px, 30vw, 340px) }
-}
-@media (max-width:640px){
-  .app-section{ grid-template-columns: 1fr }
-  .app-illustration{ width:100%; justify-self:center }
-}
-
-/* ========== Reveal on scroll ========== */
-.reveal{ opacity:0; transform: translateY(14px); transition: opacity .5s var(--ease), transform .6s var(--ease) }
-.reveal.reveal-in{ opacity:1; transform:none }
-.about-hero {
-  position: relative;
-  min-height: 80vh;           /* خليه 100vh لو عايز يغطي الشاشة كاملة */
+/* أصغر بكتير (ديسكتوب) + تمركز كامل */
+.lightbox-inner{
+  width:  min(42vw, 520px);
+  height: min(40vh, 360px);
+  transform: none;
+  touch-action: none;
+  cursor: grab;
   display: grid;
   place-items: center;
-  overflow: hidden;
-  color: #fff;
 }
+.lightbox-inner.dragging{ cursor: grabbing; }
 
-.about-bg-video {
-  position: absolute;
-  inset: 0;
+.lb-track{
   width: 100%;
   height: 100%;
-  object-fit: cover;          /* يغطي بدون تمدد غريب */
-  z-index: -2;
+  display: grid;
+  place-items: center;
+  transition: transform .18s ease;
+  will-change: transform;
+}
+.lb-track.dragging{ transition: none; }
+
+/* الصورة */
+.lb-img{
+  display:block;
+  max-width:100%;
+  max-height:100%;
+  opacity:0;
+  transition:opacity .18s ease;
+  will-change:opacity, transform;
+  user-select:none; -webkit-user-drag:none;
+}
+.lb-img.is-loaded{ opacity:1 }
+
+/* الفيديو (موحّد – نسخة واحدة فقط) */
+.lb-video{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  border-radius:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+  background:#000;
 }
 
-.about-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.55)
-  );
+/* أزرار الإغلاق/الانتقال (أصغر) */
+.lightbox-close,
+.lightbox-nav{
+  position:absolute; border:0; cursor:pointer;
+  width:36px; height:36px; border-radius:999px;
+  background:rgba(255,255,255,.12); display:grid; place-items:center;
+  transition:background .18s ease, transform .18s ease;
 }
+.lightbox-close{ top:14px; right:14px }
+.lightbox-nav.prev{ top:50%; left:14px; transform:translateY(-50%) }
+.lightbox-nav.next{ top:50%; right:14px; transform:translateY(-50%) }
+.lightbox-close:hover, .lightbox-nav:hover{ background:rgba(255,255,255,.2) }
+.lightbox svg{ width:18px; height:18px; color:#fff }
 
-.about-content {
-  position: relative;
-  text-align: center;
-  padding: 2rem;
-  max-width: 900px;
+/* أزرار الزووم (أصغر) */
+.lb-zoom-controls{
+  position:absolute; left:14px; top:14px; display:flex; gap:8px; z-index:2;
 }
-
-.about-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.15;
-  margin-bottom: .75rem;
+.lb-zoom-btn{
+  width:34px; height:34px; border:0; border-radius:10px;
+  background:rgba(255,255,255,.12); color:#fff; display:grid; place-items:center;
+  cursor:pointer; transition:background .18s ease;
 }
+.lb-zoom-btn:hover{ background:rgba(255,255,255,.2) }
+.lb-zoom-btn svg{ width:18px; height:18px }
 
-.about-sub {
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  opacity: .95;
-}
-
-/* احترام تفضيل تقليل الحركة + فallback للصورة */
-@media (prefers-reduced-motion: reduce) {
-  .about-bg-video { display: none; }
-  .about-hero {
-    background: center / cover no-repeat url('/assets/about-bg.jpg');
+/* موبايل: أصغر من قبل وبرضه متمركز */
+@media (max-width:640px){
+  .lightbox-inner{
+    width: 92vw;
+    height: 82svh;
+    transform: none; /* تأكيد إلغاء الإزاحة */
   }
 }
-
-/* تحسين بسيط للموبايل */
-@media (max-width: 480px) {
-  .about-overlay {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.65));
-  }
+/* ====== Video tiles (grid) ====== */
+.ig-video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover }
+.ig-play{
+  position:absolute; bottom:8px; right:8px; width:34px; height:34px; border-radius:10px;
+  background:rgba(0,0,0,.45); color:#fff; display:grid; place-items:center; backdrop-filter:blur(4px);
 }
+.ig-play svg{ width:18px; height:18px }
